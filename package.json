@@ -1,0 +1,16 @@
+{
+  "name": "peglab-poc",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Battle-tested Kaspa receipt PoC. Parker unit + PegLab warning. Two tracks: public goods, or a settlement company. Not USD.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test tests/receipt.test.mjs",
+    "demo": "node -e \"import('./src/receipt.mjs').then(m => console.log(JSON.stringify(m.receiptDemo(), (_, v) => typeof v === 'bigint' ? v.toString() : v, 2)))\"",
+    "serve": "node server/serve.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

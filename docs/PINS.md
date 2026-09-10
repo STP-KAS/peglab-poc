@@ -1,0 +1,44 @@
+# Pins (from kaspa-master-file, freeze 10 Sep 2026)
+
+Not Kaspa core. Merged Active KIP = law. Open PR, Discord rumor, tweet ≠ a pin. Recheck before quoting.
+
+Full map: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-file).
+
+## Consensus / compiler
+
+| Pin | Value |
+| --- | --- |
+| Network for this PoC | **testnet-10** |
+| Mainnet Toccata | Live. DAA `474_165_565` (~30 Jun 2026). KIPs 16, 17, 20, 21 Active 15 Jul 2026 |
+| rusty-kaspa | **v2.0.1** Toccata maintenance tag |
+| silverc | **[v1.0.0](https://github.com/kaspanet/silverscript/releases/tag/v1.0.0)** Ori / someone235, 9 Sep 2026, commit `3ed9733`. Windows zip SHA256 `3e0d660c15a9e7ac90f3960da24d348b076b1891481bfe758db18accc8a102e1` |
+| `#234` | Foreign `readInputState` **closed unmerged**. Own UTXO `validateOutputState` only |
+| `#243` | Compiled artifact has no compute-budget estimate — still **open** |
+| KCC-0020 | **Draft**. Not a gram token |
+| DAGKnight (KIP-2) | Still Proposed. Not shipped |
+| vProgs / Kurrent | Research. Not product |
+| TN12 | Do not use for Toccata product work |
+
+## Parker / PegLab
+
+| What | URL |
+| --- | --- |
+| Parker education + TN10 apps | https://github.com/parker2017code/kaspa-explained |
+| Parker site | https://kaspaexplained.com |
+| Parker TN12 evidence lab | https://github.com/parker2017code/tn12-covenant-vault-demo |
+| PegLab classroom | https://github.com/STP-KAS/peglab-stp |
+| Darwin mix | https://github.com/STP-KAS/gramlanepeglab |
+| Gramlane grams | https://github.com/STP-KAS/gramlane |
+| This PoC | https://github.com/STP-KAS/peglab-poc |
+
+## Wallets / chat
+
+| What | Note |
+| --- | --- |
+| Inject on lab pages | KasWare, Kastle only |
+| KaChat | iOS `id6759102359`, Android `com.kachat.app`. No PC |
+| KNS | Official GitBook. Indexer FCFS. Not kasdomain |
+
+## Do not claim from these pins
+
+100 BPS live; instant irreversible payments; DAGKnight is consensus; KCC-0020 adopted; foreign `readInputState` is safe; vProgs live; 1kUSD is production; tPEG is USD; SilverScript v1.0.0 shipped audited dapps.
