@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>peglab-poc — Parker unit, PegLab warning</title>
+  <link rel="stylesheet" href="/web/style.css">
+</head>
+<body>
+  <div class="banner">TESTNET TOY · NOT USD · NOT A TOKEN SALE · WILL DEPEG IF YOU TREAT tPEG AS A DOLLAR</div>
+  <header>
+    <p class="muted">STP-KAS · freeze 10 Sep 2026 · pins from kaspa-master-file</p>
+    <h1>Parker has the unit. PegLab has the warning.</h1>
+    <p class="lead">This proof of concept ships the <strong>KAS receipt</strong> (1 unit = 1 locked sompi) and keeps the classroom that a 2 tKAS pool is not a peg. Two tracks share that primitive. Do not mix them.</p>
+  </header>
+  <main>
+    <table>
+      <thead><tr><th>Object</th><th>Winner</th><th>Mainnet</th></tr></thead>
+      <tbody>
+        <tr><td>Unit</td><td>Parker receipt</td><td>After TN10 lock/transfer/redeem txids</td></tr>
+        <tr><td>Classroom</td><td>PegLab tPEG</td><td>Never as money</td></tr>
+        <tr><td>Dollar</td><td>Neither</td><td>Licensed issuer only</td></tr>
+        <tr><td>Chat pay</td><td>Neither live</td><td>KaChat signer + timeout</td></tr>
+      </tbody>
+    </table>
+
+    <div class="grid" style="margin-top:1.2rem">
+      <article class="card">
+        <h2>Track 0 — not a business</h2>
+        <p>Anyone hosts. Desk keeps 0. Grants for indexer. Lightning / L402 / Liquity shape.</p>
+        <p><a href="/docs/TRACK-NOT-BIZ.md">docs/TRACK-NOT-BIZ.md</a></p>
+      </article>
+      <article class="card">
+        <h2>Track 1 — a business</h2>
+        <p>Sell non-custodial invoicing and optional hosting. BTCPay shape. Never issue a dollar.</p>
+        <p><a href="/docs/TRACK-BIZ.md">docs/TRACK-BIZ.md</a></p>
+      </article>
+    </div>
+
+    <h2>Receipt demo (ENGINE_SPEC)</h2>
+    <p class="muted">Lock 0.5 tKAS → transfer → redeem 0.2 → refuse skim → redeem the rest. Claims stay 1:1 with backing. No oracle.</p>
+    <p><button id="run" type="button">Run receipt PoC</button></p>
+    <pre id="demo">Click the button. This does not broadcast.</pre>
+
+    <h2>Next empty box</h2>
+    <ul class="steps">
+      <li>Broadcast lock / transfer / redeem on <strong>Testnet-10</strong> and journal txids.</li>
+      <li>Timeout claim <em>or</em> reclaim, same network. Steal Parker’s TN12 rules; do not use TN12.</li>
+      <li>Indexer row. Then a phone signer. Then 402.</li>
+    </ul>
+    <p><a href="/docs/TODO.md">Full todo</a> · <a href="/docs/BATTLE.md">Battle</a> · <a href="/docs/BEST-PRACTICES.md">Other chains</a> · <a href="https://github.com/STP-KAS/kaspa-master-file">Master file</a></p>
+  </main>
+  <footer>
+    MIT. No warranty. Compiler pin silverc v1.0.0. tPEG cannot pay KaChat. wTestUSD cannot buy the town’s crops.
+  </footer>
+  <script type="module" src="/web/app.js"></script>
+</body>
+</html>
