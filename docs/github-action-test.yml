@@ -1,3 +1,5 @@
+# Copy to .github/workflows/test.yml after `gh auth refresh -s workflow`.
+# GitHub refused this path on an OAuth token without the workflow scope.
 name: test
 
 on:
