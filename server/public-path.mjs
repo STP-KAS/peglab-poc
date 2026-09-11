@@ -10,13 +10,14 @@ const ALLOWED_ROOT = new Set([
 ]);
 
 export function resolvePublic(root, pathname) {
-  let decoded;
-  try {
-    decoded = decodeURIComponent(pathname || '/');
-  } catch {
-    return null;
+  let decoded = String(pathname || '/').replace(/\\/g, '/');
+  if (decoded.includes('%')) {
+    try {
+      decoded = decodeURIComponent(decoded).replace(/\\/g, '/');
+    } catch {
+      return null;
+    }
   }
-  decoded = decoded.replace(/\\/g, '/');
   if (decoded.includes('\0')) return null;
   if (decoded === '/') decoded = '/web/index.html';
   const parts = decoded.split('/').filter((p) => p && p !== '.');
@@ -25,8 +26,9 @@ export function resolvePublic(root, pathname) {
   const rel = path.relative(root, file);
   if (!rel || rel.startsWith('..') || path.isAbsolute(rel)) return null;
   const segs = rel.split(path.sep);
-  if (segs.includes('.git') || segs.includes('.local')) return null;
-  if (ALLOWED_TOP.has(segs[0])) return file;
+  const lower = segs.map((s) => s.toLowerCase());
+  if (lower.includes('.git') || lower.includes('.local') || lower.includes('.env')) return null;
+  if (ALLOWED_TOP.has(lower[0])) return file;
   if (segs.length === 1 && ALLOWED_ROOT.has(segs[0])) return file;
   return null;
 }
