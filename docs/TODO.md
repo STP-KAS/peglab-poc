@@ -29,7 +29,7 @@ Parker journaled create / split / merge / move / redeem-half / redeem-full on Te
 
 Pick one, then stop re-deriving the unit:
 
-- [ ] **Cite** Parker’s pack into `artifacts/parker-tn10-receipt.json` (txids, accepting blocks, date, node URL, “not our series”)
+- [x] **Cite** Parker’s pack into `artifacts/parker-tn10-receipt.json` (txids, accepting blocks, 6 Sep 2026, node URL, not our series)
 - [ ] **or reproduce** on a new series compiled with silverc v1.0.0 and journal *our* txids
 
 Do not start a company until one of those ticks. Timeout / 402 / KaChat are the real empty boxes (Phases 2–5).
@@ -57,9 +57,10 @@ Do **not** use testnet-12 for this phase.
 
 | Item | Done when | Copy from |
 | --- | --- | --- |
-| [ ] Quote object | amount, series, timeout, who pays postage | Lightning BOLT 11/12; `kchat:1:payunit` sketch |
-| [ ] Lock with timeout | Recipient claims now **or** sender reclaims after `tx.time` | Parker TN12 delayed vault + buyer escrow, **re-proven on TN10** |
-| [ ] Both paths journaled | One claim txid, one reclaim txid | Parker evidence pack |
+| [x] Quote object (ENGINE_SPEC) | amount, series, timeout, postage; local 402 body | `src/quote.mjs` — not x402 v2 |
+| [x] Lock with timeout (ENGINE_SPEC) | Recipient claims now; sender reclaims after `tx.time` | `src/timeout.mjs` + `contracts/KaChatPayTimeout.sil`. Parker TN10 escrow refund `ab8429c4…` already SCRIPT_ENFORCED (skims fee — do not copy). |
+| [ ] Both paths journaled **as this series** | Our claim txid + our reclaim txid on TN10 | Parker pack is cited; ours is empty |
+| [ ] .sil output-value + sponsor | Script refuses skim; sibling P2PK pays mass | Tutorial hole |
 | [ ] Failure copy | Five sentences: stale, postage, unknown series, paused, timeout | PegLab VISION |
 
 **Done when:** one timeout claim and one timeout reclaim are accepted on TN10.

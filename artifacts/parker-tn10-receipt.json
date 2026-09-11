@@ -1,0 +1,61 @@
+{
+  "schema": "parker-tn10-receipt/v1",
+  "extractedAt": "2026-09-11",
+  "not_our_series": true,
+  "network": "testnet-10",
+  "nodeUrl": "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
+  "acceptance_caveat": "Node-specific accepted-chain observation, not finality, not a security audit, not mainnet. This is Parker's series, not peglab-poc genesis.",
+  "source": "C:\\Users\\Remco\\kaspa-explained\\design\\PUBLIC-APPS-REVIEW.md",
+  "scanCompletedAt": "2026-09-06T15:52:21.843Z",
+  "receipt_tn10": [
+    {"action": "create", "txid": "9e6f73970704fee4e6374ca4b6a320c2f626ea820f15556beca9274201f14750", "acceptingBlock": "d4e7a85b4664268a29ab8d2510e0a2f65c8459f2c45ec56f17d525b2b7ce07e9", "fee_tKAS": 0.002693, "verified": true},
+    {"action": "split", "txid": "711cb57137a8ef9dfe8fac9ae4f8df4a01f5e491b5850b6a474b8f3829fa9862", "acceptingBlock": "f4fd4e46bfa7c23f983af9166a03371e51ceac2d9da631ec32a724f2cba8b843", "fee_tKAS": 0.007409, "verified": true},
+    {"action": "merge", "txid": "9d884f44868d0ef044f2294b8127b158ee5dbd98b89d2f6255e253b97dca2ca7", "acceptingBlock": "1f9abb45c9c7fbb39e2bbc8926364e4936870abf1e5bf50c0027cfe26c27aa15", "fee_tKAS": 0.010836, "verified": true},
+    {"action": "move", "txid": "41fe310957bb2f75e7df562f55d5b4cbba2326853a43d69d24583155e4619670", "acceptingBlock": "bb88605416f9d41b1a2c3c7e699f0082ce8102c5eaf7155199066c026338ec25", "fee_tKAS": 0.006840, "verified": true},
+    {"action": "redeem-half", "txid": "4f73b413ab63602462cb99051990a83a748bd2f6b32055d9b8526d25688dbd39", "acceptingBlock": "582acc1c60ca96b4420eb52f7f0ed630daab1edb8d4d6e9df00588c7e379afa6", "fee_tKAS": 0.007252, "verified": true},
+    {"action": "redeem-full", "txid": "c474525df24a718d1e4ecebc3ec081cb8d7cf5c95614c12d3273f554da3247bd", "acceptingBlock": "fd9284d10259a98f3f5e727ef8a6d84fa44e46c5e00ea0aec5982d0ed9aa92bf", "fee_tKAS": 0.006683, "verified": true}
+  ],
+  "timeout_tn10": [
+    {
+      "action": "escrow-fund",
+      "txid": "eb374901fc3376c67b0e6b3798d49445ab280d9790ee1d9e6c70576a2b44ef1d",
+      "acceptingBlock": "d6a192a106ebf585001676048010ee61db077f5e6582c3a96f7e4acf3692abda",
+      "fee_tKAS": 0.002659,
+      "verified": true,
+      "note": "Parker ApplicationEscrow on TN10. Public UI. Fee was taken from principal in that contract — do not copy that into a receipt timeout."
+    },
+    {
+      "action": "escrow-timed-refund",
+      "txid": "ab8429c4db77c9275ab459a66acc26c224b3dff88df4f32d54cfe988de3b06f6",
+      "acceptingBlock": "fccdfba7fac996c7f94cd2f6e52b5d64d33f2cbf9f41a84a549e03b92a5f4ec8",
+      "fee_tKAS": 0.002810,
+      "verified": true,
+      "note": "Timeout reclaim already SCRIPT_ENFORCED on TN10 as escrow refund, 6 Sep 2026."
+    }
+  ],
+  "wrap_roundtrip": {
+    "date": "2026-09-07",
+    "verifiedAt": "2026-09-07T10:39:33.855759+00:00",
+    "source": "docs/wrap-poc-roundtrip-verification.json",
+    "oracle": "Trusted local test oracle. Kaspa does not verify Ethereum. wTestUSD cannot buy the town crops.",
+    "lock_sepolia": "0x3769d3b128d35a11b4024072e654f48aeb1813916c9a6cc004b4865eaee7f388",
+    "kaspa_init": "a2cd8478551b58c4167d55b3486567b13b0b0a27febbe6822fa16bad6ff77a7f",
+    "kaspa_mint": "1095e9959dfc6b1540be8f73feed139a5fd6757b44d9f0b5f3a8623377c36f58",
+    "kaspa_transfer": "ae52bf28b18a39bed6d555997047e79984dd010d9b8f21955d4a6a8f032f5cdd",
+    "kaspa_burn": "dd0873f336d6392dab2754c936edcf2adee2b2b7597d2380a8b71588e06accf1",
+    "release_sepolia": "0x8c2ed80f15b8fb203e8c04b1eaf91bd932f56c605c6bfe5297879516f6e6e9f6"
+  },
+  "economy": {
+    "label": "Sprout Harbor first order",
+    "date": "2026-09-07",
+    "verifiedAt": "2026-09-07T11:11:02.159Z",
+    "firstOrderTransactions": 21,
+    "source": "docs/economy-live-verification.json"
+  },
+  "honest_gaps": [
+    "Browser owns demo keys. Not installed-wallet signing.",
+    "Not a production indexer.",
+    "Not mainnet. Adapters reject kaspa:.",
+    "Not a security audit. Node acceptance is not finality."
+  ]
+}

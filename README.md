@@ -14,7 +14,7 @@ Then open http://127.0.0.1:8770/
 
 `src/receipt.mjs` is **ENGINE_SPEC**: 1 unit = 1 locked sompi, sponsor pays fees, skim refused.
 
-Parker already journaled create / split / merge / move / redeem on Testnet-10 (**6 Sep 2026**). This checkout is not SCRIPT_ENFORCED until those rules sit in *our* `artifacts/` **or** we cite Parker’s pack there. Do not re-litigate the unit. Next empty boxes: **timeout on TN10**, postage, KaChat signer, HTTP 402 (bind [elldeeone/kaspa-x402](https://github.com/elldeeone/kaspa-x402); do not invent a fourth 402).
+Parker already journaled create / split / merge / move / redeem on Testnet-10 (**6 Sep 2026**). This checkout is not SCRIPT_ENFORCED until those rules sit in *our* `artifacts/` **or** we cite Parker’s pack there. Do not re-litigate the unit. Third pass (11 Sep): ENGINE_SPEC timeout + local 402 are in `src/`. Parker’s TN10 pack is **cited** in `artifacts/parker-tn10-receipt.json` (including escrow timed refund `ab8429c4…`). Timeout **.sil does not lock output value** — do not copy fee-from-principal. KaChat prefix is `kchat:1:pay` (`payunit` does not exist). Live subsidy ~**21.83 KAS/s**; fee floor **100 sompi/gram** idle. Next empty box: **our** TN10 timeout claim+reclaim journal, then a phone signer. Bind [elldeeone/kaspa-x402](https://github.com/elldeeone/kaspa-x402) for agents; do not invent a fourth 402.
 
 ---
 
