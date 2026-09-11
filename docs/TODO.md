@@ -15,16 +15,24 @@ Compiler: SilverScript **v1.0.0** (`3ed9733`, 9 Sep 2026). Network: **testnet-10
 - [x] ENGINE_SPEC of those rules in this repo (`src/receipt.mjs`, `npm test`)
 - [x] Doctrine: Parker unit, PegLab warning, no dollar, no raise against tPEG
 - [x] Master file pin: silverc v1.0.0, KIPs 16/17/20/21 Active, TN10 not TN12
-- [ ] This repo’s public GitHub live, README matches the battle verdict
+- [x] This repo’s public GitHub live, README matches the battle verdict ([STP-KAS/peglab-poc](https://github.com/STP-KAS/peglab-poc), 10 Sep 2026)
+- [x] Second-pass think-big map (11 Sep 2026): Parker’s TN10 receipt pack cited; 402 landscape; security budget; kill criteria — [THINK-BIG.md](THINK-BIG.md)
 - [ ] HTTPS later; localhost is enough for Phase 0
 
 **Done when:** a stranger can run `npm test` and read the two-track sentence without seeing `$` on the receipt.
 
 ---
 
-## Phase 1 — Live TN10 receipt (the actual PoC)
+## Phase 1 — Live TN10 receipt (Parker already did the rules)
 
-This is the empty box PegLab already named. Do not start KaChat or a company until it ticks.
+Parker journaled create / split / merge / move / redeem-half / redeem-full on Testnet-10 on **6 Sep 2026** (txids in [THINK-BIG.md](THINK-BIG.md)). This checkout still has empty `artifacts/`.
+
+Pick one, then stop re-deriving the unit:
+
+- [ ] **Cite** Parker’s pack into `artifacts/parker-tn10-receipt.json` (txids, accepting blocks, date, node URL, “not our series”)
+- [ ] **or reproduce** on a new series compiled with silverc v1.0.0 and journal *our* txids
+
+Do not start a company until one of those ticks. Timeout / 402 / KaChat are the real empty boxes (Phases 2–5).
 
 | Item | Done when | Copy from |
 | --- | --- | --- |
