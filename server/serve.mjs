@@ -17,7 +17,20 @@ const types = {
 };
 
 const server = http.createServer((req, res) => {
-  const url = new URL(req.url || '/', `http://127.0.0.1:${port}`);
+  const method = req.method || 'GET';
+  if (method !== 'GET' && method !== 'HEAD') {
+    res.writeHead(405);
+    res.end('method not allowed');
+    return;
+  }
+  let url;
+  try {
+    url = new URL(req.url || '/', `http://127.0.0.1:${port}`);
+  } catch {
+    res.writeHead(400);
+    res.end('bad url');
+    return;
+  }
   const file = resolvePublic(root, url.pathname);
   if (!file) {
     res.writeHead(403);

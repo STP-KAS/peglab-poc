@@ -14,6 +14,9 @@ The engines are an honest ENGINE_SPEC. The HTTP preview was the real defect: it 
 | bug | No GitHub Action, so `npm test` never ran on push | `.github/workflows/test.yml` Node 20 |
 | suggestion | Track 0 still offered a `kchat:1:payunit` PR | KaChat prefix is `kchat:1:pay` only |
 | nit | Serve banner said no txid journal after Parker pack was cited | Banner distinguishes cited pack vs our series |
+| bug | Unsigned quote sold as receiver-signed; mapper emitted `x402Version: 2` | HTML + `signed: false`; mapper is `doNotSend` |
+| bug | PROTOCOL said equality stays locked; `.sil` is `>=` | PROTOCOL matches `tx.time >= timeout` |
+| bug | Race test never raced | Both claim and reclaim succeed on one locked snapshot |
 
 ## Still open (do not pretend CI fixed these)
 

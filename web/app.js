@@ -24,16 +24,20 @@ btn.addEventListener('click', () => {
   out.textContent = lines.join('\n');
 });
 
-document.getElementById('run-timeout').addEventListener('click', () => {
-  const demo = timeoutDemo({path: 'reclaim'});
+const showTimeout = (path) => {
+  const demo = timeoutDemo({path});
   const lines = demo.steps.map((s, i) => `${i + 1}. ${s.title}\n   ${s.lesson}${s.code ? ` (${s.code})` : ''}`);
   lines.push('');
+  lines.push(`path → ${path}`);
   lines.push(`too-early → ${demo.tooEarly}`);
-  lines.push(`skim → ${demo.skim}`);
+  lines.push(`skim (ENGINE_SPEC stub) → ${demo.skim}`);
   lines.push(`status → ${demo.lock.status}`);
   lines.push(demo.inspect.warning);
   document.getElementById('timeout-out').textContent = lines.join('\n');
-});
+};
+
+document.getElementById('run-timeout').addEventListener('click', () => showTimeout('reclaim'));
+document.getElementById('run-timeout-claim').addEventListener('click', () => showTimeout('claim'));
 
 document.getElementById('run-402').addEventListener('click', () => {
   const now = 1_800_000_000_000n;

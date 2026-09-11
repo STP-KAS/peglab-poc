@@ -16,9 +16,12 @@ describe('public path allowlist', () => {
 
   it('refuses git, keys, traversal, and server internals', () => {
     assert.equal(resolvePublic(root, '/.git/config'), null);
+    assert.equal(resolvePublic(root, '/.LOCAL/keys.json'), null);
     assert.equal(resolvePublic(root, '/.local/sponsor.json'), null);
     assert.equal(resolvePublic(root, '/../../.ssh/id_rsa'), null);
+    assert.equal(resolvePublic(root, '/..%5cpeglab-poc-evil%5csecret'), null);
     assert.equal(resolvePublic(root, '/server/serve.mjs'), null);
     assert.equal(resolvePublic(root, '/%2e%2e/.git/config'), null);
+    assert.equal(resolvePublic(root, '/%'), null);
   });
 });
