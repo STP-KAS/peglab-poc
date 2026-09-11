@@ -43,7 +43,7 @@ If someone wants to donate tKAS to a Testnet-10 demo wallet, that is a testnet g
 | --- | --- | --- |
 | Compiler, node, KIPs | Already public (kaspanet, KEF, self-fund) | This desk |
 | Indexer row per address | Ecosystem grant / volunteer / you run simply-kaspa-indexer | Users of the receipt |
-| KaChat signer | KaChat maintainers; this desk can PR a `kchat:1:payunit` sketch | A round |
+| KaChat signer | KaChat maintainers; covenant pay still has to ride `kchat:1:pay` (no `payunit` prefix exists) | A round |
 | Demo coins | TN10 faucet / miner | Public |
 | Hosted UI | Anyone. Same rule as a node. | Circle |
 

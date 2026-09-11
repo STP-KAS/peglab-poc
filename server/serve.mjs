@@ -2,6 +2,7 @@ import http from 'node:http';
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {resolvePublic} from './public-path.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const port = Number(process.env.PORT || 8770);
@@ -17,10 +18,8 @@ const types = {
 
 const server = http.createServer((req, res) => {
   const url = new URL(req.url || '/', `http://127.0.0.1:${port}`);
-  let rel = decodeURIComponent(url.pathname);
-  if (rel === '/') rel = '/web/index.html';
-  const file = path.normalize(path.join(root, rel));
-  if (!file.startsWith(root) || file.includes(`${path.sep}.local${path.sep}`)) {
+  const file = resolvePublic(root, url.pathname);
+  if (!file) {
     res.writeHead(403);
     res.end('forbidden');
     return;
@@ -38,5 +37,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, '127.0.0.1', () => {
   console.log(`peglab-poc  http://127.0.0.1:${port}/`);
-  console.log('TESTNET TOY. NOT USD. ENGINE_SPEC until a txid journal exists.');
+  console.log('TESTNET TOY. NOT USD. ENGINE_SPEC. Parker pack is cited; this series has no txids.');
 });
