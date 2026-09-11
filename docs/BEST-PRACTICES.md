@@ -64,7 +64,7 @@ Gramlane already speaks HTTP 402 with **grams** (KIP-21 mass). That is postage, 
 
 BTCPay is free, MIT, self-hosted, non-custodial Bitcoin invoicing. Payments go to the merchant wallet. Hosts do **not** hold keys.
 
-- 2025: Namecheap processed a **$2M** BTC domain sale on BTCPay. Unbank: 40M payments in six months on the stack.
+- Namecheap: **>$73M / 1.1M txs** on BTCPay (May 2020–Oct 2024) and a **$2M** domain sale (Sep 2025). Unbank official case study: **40,416 txs / $40M** (Jun–Dec 2024) — not “40 million payments.”
 - v2.3 (Dec 2025): **subscriptions + server monetization** — a host charges merchants a monthly fee for the *instance*, never a cut of the coins.
 - Third-party hosts: LunaNode ~$10/mo, Clovyr ~$20/mo (docs, 2026). Same software.
 

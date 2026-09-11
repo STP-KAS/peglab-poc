@@ -1,4 +1,4 @@
-# Pins (from kaspa-master-file, freeze 10 Sep 2026)
+# Pins (from kaspa-master-file, freeze 10 Sep 2026; think-big addendum 11 Sep)
 
 Not Kaspa core. Merged Active KIP = law. Open PR, Discord rumor, tweet ≠ a pin. Recheck before quoting.
 
@@ -30,6 +30,10 @@ Full map: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-fi
 | Darwin mix | https://github.com/STP-KAS/gramlanepeglab |
 | Gramlane grams | https://github.com/STP-KAS/gramlane |
 | This PoC | https://github.com/STP-KAS/peglab-poc |
+| elldeeone/kaspa-x402 | https://github.com/elldeeone/kaspa-x402 | Intended x402 v2 binding. TN10 alpha.10 (18 flows, 10 Aug 2026). Default for agent 402. Not RC. |
+| Kali123411/k402 | https://github.com/Kali123411/k402 | Covenant payment channel. Draft KCC. Author: mainnet open/close. **Not** x402 v2 (elldeeone 22 Aug). |
+| KASPACOM/x402-KAS | https://github.com/KASPACOM/x402-KAS | TN12 facilitator experiment. **Superseded.** |
+| Who pays the KAS | https://kaspa.news/articles/who-pays-the-kas-the-ux-problem-hiding-inside-a-dollar-payment | Core R&D 25 Jun 2026 recap. Receiver / sender / sponsor+refund. Not a KIP. |
 
 ## Wallets / chat
 

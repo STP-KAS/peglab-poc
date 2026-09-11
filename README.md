@@ -2,7 +2,7 @@
 
 **Parker has the unit. PegLab has the warning. This repo is the proof-of-concept that ships the unit and keeps the warning.**
 
-Not USD. Not tPEG. Not a token sale. Not Kaspa core. Freeze: **10 Sep 2026**. Pins: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-file).
+Not USD. Not tPEG. Not a token sale. Not Kaspa core. Freeze: **11 Sep 2026**. Pins: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-file). Second pass: [docs/THINK-BIG.md](docs/THINK-BIG.md).
 
 ```
 npm test
@@ -12,7 +12,9 @@ npm run serve
 
 Then open http://127.0.0.1:8770/
 
-`src/receipt.mjs` is **ENGINE_SPEC**: 1 unit = 1 locked sompi, sponsor pays fees, skim refused. It is not `SCRIPT_ENFORCED` until Testnet-10 accepts lock / transfer / redeem and those txids sit in `artifacts/`.
+`src/receipt.mjs` is **ENGINE_SPEC**: 1 unit = 1 locked sompi, sponsor pays fees, skim refused.
+
+Parker already journaled create / split / merge / move / redeem on Testnet-10 (**6 Sep 2026**). This checkout is not SCRIPT_ENFORCED until those rules sit in *our* `artifacts/` **or** we cite Parker’s pack there. Do not re-litigate the unit. Next empty boxes: **timeout on TN10**, postage, KaChat signer, HTTP 402 (bind [elldeeone/kaspa-x402](https://github.com/elldeeone/kaspa-x402); do not invent a fourth 402).
 
 ---
 
@@ -48,7 +50,7 @@ The **shared PoC** is the same receipt + timeout escrow + sponsor fee. The track
 
 Do not mix the sentences. A receipt is not a raise. A hosted instance is not a peg.
 
-Todo list that makes the PoC *work*: [docs/TODO.md](docs/TODO.md). Other-chain practice: [docs/BEST-PRACTICES.md](docs/BEST-PRACTICES.md). Compiler pin: SilverScript **[v1.0.0](https://github.com/kaspanet/silverscript/releases/tag/v1.0.0)** (9 Sep 2026, `3ed9733`). `#234` foreign `readInputState` still **closed unmerged** — own UTXO `validateOutputState` only.
+Todo: [docs/TODO.md](docs/TODO.md). Think-big second pass: [docs/THINK-BIG.md](docs/THINK-BIG.md). Other-chain practice: [docs/BEST-PRACTICES.md](docs/BEST-PRACTICES.md). Compiler pin: SilverScript **[v1.0.0](https://github.com/kaspanet/silverscript/releases/tag/v1.0.0)** (9 Sep 2026, `3ed9733`). `#234` foreign `readInputState` still **closed unmerged** — own UTXO `validateOutputState` only.
 
 ---
 

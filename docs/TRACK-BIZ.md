@@ -21,7 +21,7 @@ A **Kaspa settlement desk**:
 
 Revenue is **subscription and support**, optionally a disclosed flat sponsor-fee for postage so a 0-KAS receiver still works. Revenue is **not** a cut of principal, a sister token, or tPEG.
 
-BTCPay v2.3 (Dec 2025) already proved the monetization shape: hosts charge merchants for the *server*, never for the coins. Unbank ran 40M payments on that stack. That is the scale picture. Kaspa does not have that traffic today. The PoC is one merchant invoice and one agent 402, not 40 million.
+BTCPay v2.3 (Dec 2025) already proved the monetization shape: hosts charge merchants for the *server*, never for the coins. Unbank’s official case study is **40,416 txs / $40M** in six months of 2024 — not “40 million payments.” That is still the scale *picture*. Kaspa does not have that traffic today. The PoC is one merchant invoice and one agent 402.
 
 ---
 
