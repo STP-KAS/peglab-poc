@@ -35,12 +35,14 @@ Full map: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-fi
 | KASPACOM/x402-KAS | https://github.com/KASPACOM/x402-KAS | TN12 facilitator experiment. **Superseded.** |
 | Who pays the KAS | https://kaspa.news/articles/who-pays-the-kas-the-ux-problem-hiding-inside-a-dollar-payment | Core R&D 25 Jun 2026 recap. Receiver / sender / sponsor+refund. Not a KIP. |
 
+Live chain (api.kaspa.org, 11 Sep 2026): circulating **27.694B / 28.704B** (~96.48%). Subsidy **21.82676446 KAS/s** (DAA ≥ 531,207,000). Fee estimate **100 sompi/gram** all buckets (idle at Toccata floor). DagLock mainnet launch **not evidenced** (API 525; README still testnet beta). k402 README mainnet claim **unverified**; kccs#4 open unmerged. elldeeone kaspa-x402 still **TN10 alpha.10** (10 Aug 2026); demo.kaspa-x402.org live.
+
 ## Wallets / chat
 
 | What | Note |
 | --- | --- |
 | Inject on lab pages | KasWare, Kastle only |
-| KaChat | iOS `id6759102359`, Android `com.kachat.app`. No PC |
+| KaChat | iOS `id6759102359`, Android `com.kachat.app`. No PC. Prefix is **`kchat:1:pay`**. **`kchat:1:payunit` does not exist** (checked MESSAGING.md 11 Sep 2026). |
 | KNS | Official GitBook. Indexer FCFS. Not kasdomain |
 
 ## Do not claim from these pins
