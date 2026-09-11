@@ -25,7 +25,7 @@ The 10 Sep todo said the next empty box was “broadcast receipt lock / transfer
 
 Wrap round trip **7 Sep 2026**: 100 pUSD Sepolia ↔ 100 wTestUSD. Trusted local oracle. **wTestUSD cannot buy the town’s crops.** Economy first order **7 Sep**: 21 accepted TN10 txs. V6 local **8 Sep**: 26 accepted + 5 VM rejects. Cloudflare Pages is **not** proof the signer backend is ready.
 
-This repo’s `src/receipt.mjs` is still **ENGINE_SPEC**. `artifacts/` is still empty. Two honest paths:
+This repo’s `src/receipt.mjs` is still **ENGINE_SPEC**. Parker’s pack is cited in `artifacts/parker-tn10-receipt.json` (not our series). Our `tn10-receipt.json` is still missing. Two honest paths:
 
 1. **Cite Parker’s pack** as SCRIPT_ENFORCED evidence of the *rules*. Do not pretend we invented the unit.
 2. **Reproduce** on a *new* series (our genesis, our journal) if we need independent evidence.
