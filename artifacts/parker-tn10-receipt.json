@@ -5,7 +5,7 @@
   "network": "testnet-10",
   "nodeUrl": "wss://muon-10.kaspa.blue/kaspa/testnet-10/wrpc/borsh",
   "acceptance_caveat": "Node-specific accepted-chain observation, not finality, not a security audit, not mainnet. This is Parker's series, not peglab-poc genesis.",
-  "source": "C:\\Users\\<user>\\kaspa-explained\\design\\PUBLIC-APPS-REVIEW.md",
+  "source": "https://github.com/parker2017code/kaspa-explained/blob/main/design/PUBLIC-APPS-REVIEW.md",
   "scanCompletedAt": "2026-09-06T15:52:21.843Z",
   "receipt_tn10": [
     {"action": "create", "txid": "9e6f73970704fee4e6374ca4b6a320c2f626ea820f15556beca9274201f14750", "acceptingBlock": "d4e7a85b4664268a29ab8d2510e0a2f65c8459f2c45ec56f17d525b2b7ce07e9", "fee_tKAS": 0.002693, "verified": true},
@@ -36,7 +36,7 @@
   "wrap_roundtrip": {
     "date": "2026-09-07",
     "verifiedAt": "2026-09-07T10:39:33.855759+00:00",
-    "source": "docs/wrap-poc-roundtrip-verification.json",
+    "source": "https://github.com/parker2017code/kaspa-explained/blob/main/docs/wrap-poc-roundtrip-verification.json",
     "oracle": "Trusted local test oracle. Kaspa does not verify Ethereum. wTestUSD cannot buy the town crops.",
     "lock_sepolia": "0x3769d3b128d35a11b4024072e654f48aeb1813916c9a6cc004b4865eaee7f388",
     "kaspa_init": "a2cd8478551b58c4167d55b3486567b13b0b0a27febbe6822fa16bad6ff77a7f",
