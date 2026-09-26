@@ -21,15 +21,15 @@ Full map: [STP-KAS/kaspa-master-file](https://github.com/STP-KAS/kaspa-master-fi
 
 ## Parker / PegLab
 
-| What | URL |
-| --- | --- |
-| Parker education + TN10 apps | https://github.com/parker2017code/kaspa-explained |
-| Parker site | https://kaspaexplained.com |
-| Parker TN12 evidence lab | https://github.com/parker2017code/tn12-covenant-vault-demo |
-| PegLab classroom | https://github.com/STP-KAS/peglab-stp |
-| Darwin mix | https://github.com/STP-KAS/gramlanepeglab |
-| Gramlane grams | https://github.com/STP-KAS/gramlane |
-| This PoC | https://github.com/STP-KAS/peglab-poc |
+| What | URL | Note |
+| --- | --- | --- |
+| Parker education + TN10 apps | https://github.com/parker2017code/kaspa-explained |  |
+| Parker site | https://kaspaexplained.com |  |
+| Parker TN12 evidence lab | https://github.com/parker2017code/tn12-covenant-vault-demo |  |
+| PegLab classroom | https://github.com/STP-KAS/peglab-stp |  |
+| Darwin mix | https://github.com/STP-KAS/gramlanepeglab |  |
+| Gramlane grams | https://github.com/STP-KAS/gramlane |  |
+| This PoC | https://github.com/STP-KAS/peglab-poc |  |
 | elldeeone/kaspa-x402 | https://github.com/elldeeone/kaspa-x402 | Intended x402 v2 binding. TN10 alpha.10 (18 flows, 10 Aug 2026). Default for agent 402. Not RC. |
 | Kali123411/k402 | https://github.com/Kali123411/k402 | Covenant payment channel. Draft KCC. Author: mainnet open/close. **Not** x402 v2 (elldeeone 22 Aug). |
 | KASPACOM/x402-KAS | https://github.com/KASPACOM/x402-KAS | TN12 facilitator experiment. **Superseded.** |
