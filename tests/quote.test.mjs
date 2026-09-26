@@ -19,10 +19,10 @@ describe('quote and 402', () => {
     assert.match(body.x402.note, /elldeeone\/kaspa-x402/);
     assert.equal(body.x402.later.scheme, 'exact');
     const mapped = toX402PaymentRequired(quote);
-    assert.equal(mapped.x402Version, 2);
-    assert.equal(mapped.accepts[0].scheme, 'exact');
-    assert.equal(mapped.accepts[0].network, 'kaspa:testnet-10');
-    assert.equal(mapped.accepts[0].extra.profile, 'standard-native');
+    assert.equal(mapped.doNotSend, true);
+    assert.equal(mapped.draftMapper, true);
+    assert.equal(mapped.wouldMapTo.x402Version, 2);
+    assert.equal(quote.signed, false);
   });
 
   it('refuses tPEG/USD, mixed buttons, and facilitator-shaped proofs', () => {
@@ -41,5 +41,12 @@ describe('quote and 402', () => {
     );
     const ok = acceptPayment(quote, {txid: 'ee'.repeat(32), now});
     assert.equal(ok.ok, true);
+    assert.equal(ok.engineSpec, true);
+    assert.equal(ok.signed, false);
+    throwsQuote(() => makeQuote({sender, recipient: sender, sompi: 1n, timeout, now, nonce}), 'SELF');
   });
 });
+
+const throwsQuote = (fn, code) => {
+  assert.throws(fn, (err) => err instanceof ReceiptError && err.code === code);
+};

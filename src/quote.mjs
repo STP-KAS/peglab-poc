@@ -2,8 +2,7 @@
 // Production agents should bind elldeeone/kaspa-x402 exact/standard-native.
 // This object is what a KaChat quote and a 402 body share.
 
-import {MAX_SOMPI, NETWORK, ReceiptError} from './receipt.mjs';
-import {LOCK_TIME_THRESHOLD} from './timeout.mjs';
+import {LOCK_TIME_THRESHOLD, MAX_SOMPI, NETWORK, ReceiptError} from './domain.mjs';
 
 export const QUOTE_SCHEME = 'peglab-poc-quote-v1';
 export const X402_NOTE =
@@ -44,6 +43,9 @@ export function makeQuote({
     throw new ReceiptError('BAD_TIME', 'Use Unix milliseconds >= LOCK_TIME_THRESHOLD.');
   }
   if (until <= clock) throw new ReceiptError('STALE', 'Quote timeout is not in the future.');
+  const src = hex32(sender, 'sender');
+  const dst = hex32(recipient, 'recipient');
+  if (src === dst) throw new ReceiptError('SELF', 'Sender and recipient must differ.');
   if (postage === 'grams' && asset !== 'kas-native') {
     throw new ReceiptError('MIXED_BUTTONS', 'Grams stamp work. Receipts pay. Do not mix the buttons.');
   }
@@ -52,8 +54,9 @@ export function makeQuote({
     network: NETWORK,
     asset,
     series: series ? series.toLowerCase() : null,
-    sender: hex32(sender, 'sender'),
-    recipient: hex32(recipient, 'recipient'),
+    sender: src,
+    recipient: dst,
+    signed: false,
     sompi: amount.toString(),
     timeout: until.toString(),
     postage,
@@ -92,23 +95,27 @@ export function paymentRequired(quote) {
 
 export function toX402PaymentRequired(quote) {
   return {
-    x402Version: 2,
-    resource: {url: '/work'},
-    accepts: [
-      {
-        scheme: 'exact',
-        network: 'kaspa:testnet-10',
-        asset: 'KAS',
-        amount: quote.sompi,
-        extra: {
-          binding: 'kaspa-exact-v2',
-          profile: 'standard-native',
-          pocQuoteId: quote.nonce,
-          receiverPublicKey: quote.recipient,
-          note: 'Mapper only. Do not send as if we were elldeeone. Timeout covenant is PAY, not a new x402 scheme.',
+    doNotSend: true,
+    draftMapper: true,
+    note: 'Not an x402 v2 message. Do not PUT this on the wire. Bind elldeeone/kaspa-x402.',
+    wouldMapTo: {
+      x402Version: 2,
+      resource: {url: '/work'},
+      accepts: [
+        {
+          scheme: 'exact',
+          network: 'kaspa:testnet-10',
+          asset: 'KAS',
+          amount: quote.sompi,
+          extra: {
+            binding: 'kaspa-exact-v2',
+            profile: 'standard-native',
+            pocQuoteId: quote.nonce,
+            receiverPublicKey: quote.recipient,
+          },
         },
-      },
-    ],
+      ],
+    },
   };
 }
 
@@ -120,8 +127,10 @@ export function acceptPayment(quote, {txid, now}) {
   if (clock > BigInt(quote.timeout)) throw new ReceiptError('STALE', 'Quote expired.');
   return {
     ok: true,
+    engineSpec: true,
+    signed: false,
     scheme: QUOTE_SCHEME,
     txid: txid.toLowerCase(),
-    label: 'ENGINE_SPEC accept. SCRIPT_ENFORCED only after a node journals this txid.',
+    label: 'ENGINE_SPEC shape-check only. A 64-hex string is not an accepted txid.',
   };
 }

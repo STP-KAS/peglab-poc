@@ -20,7 +20,7 @@ LOCKED --claim(recipient sig, any time)--> CLAIMED
 LOCKED --reclaim(sender sig, medianTime >= timeout)--> RECLAIMED
 ```
 
-After timeout **both** paths are live until one accepted spend. Equality `tx.time == timeout` stays locked (CLTV `<` past median time). Clock is **node median time**, not the browser.
+After timeout **both** paths are live until one accepted spend. This script uses `tx.time >= timeout` (reclaim at equality is allowed). Clock is **node median time**, not the browser. Do not import Bitcoin CLTV `<` lore here.
 
 **Honest hole in the .sil:** it does not constrain output value or force a sponsor input. Tutorial escrow skims fee from principal (Parker TN10 `ab8429c4…` did that). A receipt timeout **must not**. ENGINE_SPEC `skimTimeout()` refuses. Next SilverScript pass: `require` output value == principal and a sibling P2PK sponsor.
 

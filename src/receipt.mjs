@@ -2,18 +2,10 @@
 // One unit = one locked sompi. No dollar oracle. Sponsor pays fees.
 // This is not tPEG and not USD.
 
-export const NETWORK = 'testnet-10';
-export const MAX_SOMPI = 1_000_000_000n; // 10 tKAS
-export const MAX_FEE = 3_000_000n;
-export const SERIES_NAME = 'peglab-poc-receipt-v1';
+export {LOCK_TIME_THRESHOLD, MAX_FEE, MAX_SOMPI, NETWORK, ReceiptError} from './domain.mjs';
+import {MAX_FEE, MAX_SOMPI, NETWORK, ReceiptError} from './domain.mjs';
 
-export class ReceiptError extends Error {
-  constructor(code, message) {
-    super(message);
-    this.name = 'ReceiptError';
-    this.code = code;
-  }
-}
+export const SERIES_NAME = 'peglab-poc-receipt-v1';
 
 const hex32 = (value, label = 'bytes') => {
   if (typeof value !== 'string' || !/^[0-9a-f]{64}$/i.test(value)) {

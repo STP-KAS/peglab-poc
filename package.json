@@ -6,7 +6,7 @@
   "description": "Battle-tested Kaspa receipt PoC. Parker unit + PegLab warning. Two tracks: public goods, or a settlement company. Not USD.",
   "license": "MIT",
   "scripts": {
-    "test": "node --test tests/receipt.test.mjs tests/timeout.test.mjs tests/quote.test.mjs",
+    "test": "node --test tests/receipt.test.mjs tests/timeout.test.mjs tests/quote.test.mjs tests/public-path.test.mjs",
     "demo": "node -e \"import('./src/receipt.mjs').then(m => console.log(JSON.stringify(m.receiptDemo(), (_, v) => typeof v === 'bigint' ? v.toString() : v, 2)))\"",
     "demo:timeout": "node -e \"import('./src/timeout.mjs').then(m => console.log(JSON.stringify(m.timeoutDemo({path:'reclaim'}), (_, v) => typeof v === 'bigint' ? v.toString() : v, 2)))\"",
     "serve": "node server/serve.mjs"
