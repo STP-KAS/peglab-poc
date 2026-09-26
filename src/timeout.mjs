@@ -3,9 +3,9 @@
 // After timeout both paths are live until one spend. Not a dollar. Not tPEG.
 // SCRIPT_ENFORCED only when a Testnet-10 node accepts the tx.
 
-import {MAX_FEE, MAX_SOMPI, NETWORK, ReceiptError} from './receipt.mjs';
+import {LOCK_TIME_THRESHOLD, MAX_FEE, MAX_SOMPI, NETWORK, ReceiptError} from './domain.mjs';
 
-export const LOCK_TIME_THRESHOLD = 500_000_000_000n; // Unix ms; see silverscript TUTORIAL.md
+export {LOCK_TIME_THRESHOLD};
 export const TIMEOUT_FAMILY = 'KaChatPayTimeout';
 
 const hex32 = (value, label) => {

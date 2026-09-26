@@ -43,12 +43,15 @@
     <pre id="demo">Click the button. This does not broadcast.</pre>
 
     <h2>Timeout demo (KaChatPayTimeout)</h2>
-    <p class="muted">Recipient may claim now. Sender reclaim before timeout is TOO_EARLY. After timeout, sender reclaims. Sponsor pays fees. Parker already has a TN10 escrow timed refund (<code>ab8429c4…</code>). This .sil does not yet lock output value — do not copy tutorial fee-from-principal.</p>
-    <p><button id="run-timeout" type="button">Run timeout reclaim</button></p>
+    <p class="muted">Recipient may claim now. Sender reclaim before timeout is TOO_EARLY. After timeout both paths race until one spend. Sponsor fees are JS-only; the .sil does not lock output value.</p>
+    <p>
+      <button id="run-timeout-claim" type="button">Run timeout claim</button>
+      <button id="run-timeout" type="button">Run timeout reclaim</button>
+    </p>
     <pre id="timeout-out">Click. ENGINE_SPEC. Clock is Unix ms ≥ 500_000_000_000.</pre>
 
     <h2>HTTP 402 (local quote, not x402 v2)</h2>
-    <p class="muted">Receiver-signed quote. Proof will be an accepted txid. Production agents bind elldeeone/kaspa-x402 <code>exact/standard-native</code>. Do not invent a fourth 402.</p>
+    <p class="muted">Unsigned ENGINE_SPEC quote (<code>signed: false</code>). A 64-hex string is not an accepted txid. Production agents bind elldeeone/kaspa-x402. Do not invent a fourth 402.</p>
     <p><button id="run-402" type="button">Show 402 challenge</button></p>
     <pre id="quote-out">Click. Local scheme peglab-poc-quote-v1.</pre>
 

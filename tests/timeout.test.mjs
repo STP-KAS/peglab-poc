@@ -45,11 +45,15 @@ describe('claim and reclaim', () => {
 
   it('lets sender reclaim at timeout, and recipient could still have claimed (race)', () => {
     const lock = lockTimeout({sender, recipient, sompi: 5n, timeout, sponsorFee: fee, now});
-    const {lock: back} = reclaimTimeout(lock, {reclaimer: sender, now: timeout, sponsorFee: fee});
-    assert.equal(back.status, 'reclaimed');
+    throws(() => reclaimTimeout(lock, {reclaimer: recipient, now: timeout, sponsorFee: fee}), 'WRONG_RECLAIMER');
+    const claimed = claimTimeout(lock, {claimer: recipient, now: timeout, sponsorFee: fee});
+    const reclaimed = reclaimTimeout(lock, {reclaimer: sender, now: timeout, sponsorFee: fee});
+    assert.equal(claimed.lock.status, 'claimed');
+    assert.equal(reclaimed.lock.status, 'reclaimed');
+    assert.equal(lock.status, 'locked');
   });
 
-  it('refuses skim', () => {
+  it('refuses skim in JS only (the .sil does not)', () => {
     throws(() => skimTimeout(), 'SKIM');
   });
 });

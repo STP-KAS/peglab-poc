@@ -25,7 +25,7 @@ Compiler: SilverScript **v1.0.0** (`3ed9733`, 9 Sep 2026). Network: **testnet-10
 
 ## Phase 1 — Live TN10 receipt (Parker already did the rules)
 
-Parker journaled create / split / merge / move / redeem-half / redeem-full on Testnet-10 on **6 Sep 2026** (txids in [THINK-BIG.md](THINK-BIG.md)). This checkout still has empty `artifacts/`.
+Parker journaled create / split / merge / move / redeem-half / redeem-full on Testnet-10 on **6 Sep 2026** (txids in [THINK-BIG.md](THINK-BIG.md) and `artifacts/parker-tn10-receipt.json`). Our own series journal is still missing.
 
 Pick one, then stop re-deriving the unit:
 
